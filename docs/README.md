@@ -37,5 +37,22 @@ This project is proposed by [Forrest Brazeal](https://forrestbrazeal.com/) who h
 
 - Created a **Cosmos DB** to store the count of the visitors. 
 
+- Decided to create a **Function App** to store the count of the visitors.
+
+> Ended in vain due to some temporary issues in my local machine development.
+> Issue - https://github.com/Azure/azure-functions-core-tools/issues/2364
+> Tried all the solutions given but after a lot of time I could not get it to work.
+
+- In replacement of the **Function App**, I created a **Web App** to store the count of the visitors.
+
+<img src="img/webapp.png" alt="files" style="width:60%">
+
+- Configured Backend CI/CD using GitHub Actions and it was deployed to Azure.
+
+> Need to improve this repo with more features like 
+> - Adding Azure CDN
+> - Mapping my Subdomain
+> - Use Azure Functions instead of Azure Web App
+> - Use ARM Template to deploy the Function App
 
 
