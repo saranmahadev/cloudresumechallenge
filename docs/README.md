@@ -12,7 +12,21 @@ This project is proposed by [Forrest Brazeal](https://forrestbrazeal.com/) who h
 
 - Created My GitHub Repository - https://github.com/saranmahadev/cloudresumechallenge
 - [Docsify](https://docsify.js.org/getting-started/) is used to generate the docs for my solution 
-- 
+- For CI/CD created Three Branches
+    - Frontend 
+    - Backend
+    - Docs
+- Created my static site using HTML and CSS
+- Deployed my static site to Azure Storage using the [Azure CLI](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-how-to)
 
+<img src="img/files.png" alt="files" style="width:50%">
+
+- Integration with Azure CDN and mapping Subdomain ended in vain because of the limitations of Azure Student Account.
+
+<img src="img/cdn.png" alt="files" style="width:100%">
+
+> Took a lot of time in the Azure Portal but later I got the idea to use Azure CLI to configure CDN.
+
+- 
 
 

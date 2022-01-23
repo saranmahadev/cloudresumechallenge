@@ -1,0 +1,21 @@
+name: Frontend Deployment to the Azure Storage
+on:
+  push:
+    branches: [frontend]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+      - name: Azure Login 🚶‍♂️
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Upload to Azure Blog Storage 📦
+        uses: azure/CLI@v1
+        with:
+          inlineScript: az storage blob upload-batch -s website/ -d '$web' --account-name cdrcestorage --auth-mode key
+      - name: Azure Logout 🏃‍♂️
+        run: az logout
+        if: always()
