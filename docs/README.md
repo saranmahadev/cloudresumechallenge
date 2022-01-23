@@ -27,6 +27,8 @@ This project is proposed by [Forrest Brazeal](https://forrestbrazeal.com/) who h
 
 > Took a lot of time in the Azure Portal but later I got the idea to use Azure CLI to configure CDN.
 
-- 
+- GitHub Actions(CI/CD) was created for the Frontend Branch and Whenever a push is made to the Frontend Branch, the Frontend Branch is deployed to Azure Storage,
+
+
 
 
