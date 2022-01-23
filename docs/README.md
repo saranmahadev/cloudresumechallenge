@@ -19,7 +19,7 @@ This project is proposed by [Forrest Brazeal](https://forrestbrazeal.com/) who h
 - Created my static site using HTML and CSS
 - Deployed my static site to Azure Storage using the [Azure CLI](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-how-to)
 
-<img src="img/files.png" alt="files" style="width:50%">
+<img src="img/files.png" alt="files" style="width:60%">
 
 - Integration with Azure CDN and mapping Subdomain ended in vain because of the limitations of Azure Student Account.
 
@@ -27,8 +27,15 @@ This project is proposed by [Forrest Brazeal](https://forrestbrazeal.com/) who h
 
 > Took a lot of time in the Azure Portal but later I got the idea to use Azure CLI to configure CDN.
 
-- GitHub Actions(CI/CD) was created for the Frontend Branch and Whenever a push is made to the Frontend Branch, the Frontend Branch is deployed to Azure Storage,
+- **GitHub Actions**(CI/CD) was created for the Frontend Branch and Whenever a push is made to the Frontend Branch, the Frontend Branch is deployed to ** Azure Storage**.
 
+<img src="img/frontend-cicd.png" alt="files" style="width:60%">
+
+- Created a **Function App** in Azure to count the visitors to the site.
+
+<img src="img/fnapp.png" alt="files" style="width:60%">
+
+- Created a **Cosmos DB** to store the count of the visitors. 
 
 
 
