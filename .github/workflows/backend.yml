@@ -1,0 +1,57 @@
+name: Build and deploy Python app to Azure Web App - cdrcecountapp
+
+on:
+  push:
+    branches:
+      - backend
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python version 🐍
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.9'
+
+      - name: Create and start virtual environment 🦠️
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+      
+      - name: Install dependencies 🧨️
+        run: pip install -r app/requirements.txt
+        
+      # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
+      
+      - name: Upload artifact for deployment jobs 🏺
+        uses: actions/upload-artifact@v2
+        with:
+          name: python-app
+          path: app/
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+      - name: Download artifact from build job 📦
+        uses: actions/download-artifact@v2
+        with:
+          name: python-app
+          path: app/
+          
+      - name: 'Deploy to Azure Web App'
+        uses: azure/webapps-deploy@v2
+        id: deploy-to-webapp
+        with:
+          app-name: 'cdrcecountapp'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B144A687B29542BA98A8C630E3DF3906 }}
